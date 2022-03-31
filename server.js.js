@@ -28,6 +28,16 @@ app.get('/api/persons', (req, res) => {
   res.status(200).json(persons)
 })
 
+app.get('/api/persons/:id', (req,res) => {
+  const id = Number(req.params.id)
+
+  const person = persons.find(p => p.id === id)
+
+  person ? res.status(200).json(person) : res.status(404).json({
+    Error: 'Not found'
+  })
+})
+
 app.get('/info', (req,res) => {
   const personsLen = persons.length
   const date = new Date()
