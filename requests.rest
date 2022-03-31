@@ -7,4 +7,13 @@ GET http://localhost:3000/api/persons/1
 DELETE http://localhost:3000/api/persons/1
 
 ###
+POST http://localhost:3000/api/persons
+Content-Type: application/json
+
+  {
+    "name": "Tony Stark",
+    "number": "555-555-5555"
+  }
+
+###
 GET http://localhost:3000/info
